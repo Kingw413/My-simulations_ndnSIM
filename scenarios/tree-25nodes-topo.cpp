@@ -27,7 +27,7 @@ main(int argc, char* argv[])
   ndnGlobalRoutingHelper.InstallAll();
   /****************************************************************************/
   // Getting containers for the consumer/producer
-  
+
   Ptr<Node> consumer1 = Names::Find<Node>("Src1");
   Ptr<Node> consumer2 = Names::Find<Node>("Src2");
   Ptr<Node> consumer3 = Names::Find<Node>("Src3");
@@ -131,7 +131,7 @@ main(int argc, char* argv[])
 
   /****************************************************************************/
   // Tracer:
-  ndn::CsTracer::InstallAll("tree-25nodes-topo_rate-tracer.txt", Seconds(0.5));
+  ndn::CsTracer::InstallAll("tree-25nodes-topo_cs-tracer.txt", Seconds(0.5));
   ndn::L3RateTracer::InstallAll("tree-25nodes-topo_rate-tracer.txt", Seconds(0.5));
   ndn::AppDelayTracer::InstallAll("tree-25nodes-topo_app-delays-tracer.txt");
 
