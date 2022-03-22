@@ -49,8 +49,8 @@ main(int argc, char* argv[])
   Ptr<Node> producer9 = Names::Find<Node>("Dst9");
   /****************************************************************************/
   ndn::AppHelper consumerHelper("ns3::ndn::ConsumerCbr");
-  consumerHelper.SetAttribute("Frequency", StringValue("1000")); // interests per Second
-  consumerHelper.SetAttribute("Randomize", StringValue("uniform"));
+  consumerHelper.SetAttribute("Frequency", StringValue("100")); // interests per Second
+  
   /****************************************************************************/
   // on the first to ninth consumer node install a Consumer application
   // that will express interests in /dst1 to /dst9 namespace
