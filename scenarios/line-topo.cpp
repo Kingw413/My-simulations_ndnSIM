@@ -1,4 +1,4 @@
-// simple-topo.cpp
+// line-topo.cpp
 
 #include "ns3/core-module.h"
 #include "ns3/network-module.h"
@@ -11,9 +11,9 @@ int
 main(int argc, char* argv[])
 {
   // setting default parameters for PointToPoint links and channels
-  Config::SetDefault("ns3::PointToPointNetDevice::DataRate", StringValue("1Mbps"));
-  Config::SetDefault("ns3::PointToPointChannel::Delay", StringValue("10ms"));
-  Config::SetDefault("ns3::DropTailQueue::MaxPackets", StringValue("20"));
+  Config::SetDefault("ns3::PointToPointNetDevice::DataRate", StringValue("10Mbps"));
+  Config::SetDefault("ns3::PointToPointChannel::Delay", StringValue("1ms"));
+  Config::SetDefault("ns3::DropTailQueue::MaxPackets", StringValue("100"));
 
   // Read optional command-line parameters (e.g., enable visualizer with ./waf --run=<> --visualize
   CommandLine cmd;
@@ -56,9 +56,9 @@ main(int argc, char* argv[])
 
   Simulator::Stop(Seconds(20.0));
 
- ndn::CsTracer::InstallAll("simple-topo_cs-trace.txt",  Seconds(0.5));
- ndn::L3RateTracer::InstallAll("simple-topo_rate-race.txt", Seconds(0.5));
-ndn::AppDelayTracer::InstallAll("simple-topo_app-delays-trace.txt");
+ //ndn::CsTracer::InstallAll("simple-topo_cs-trace.txt",  Seconds(0.5));
+ //ndn::L3RateTracer::InstallAll("simple-topo_rate-race.txt", Seconds(0.5));
+ //ndn::AppDelayTracer::InstallAll("simple-topo_app-delays-trace.txt");
 
 Simulator::Run();
 Simulator::Destroy();
